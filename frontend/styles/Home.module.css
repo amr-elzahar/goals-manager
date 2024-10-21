@@ -1,0 +1,95 @@
+/* styles/Home.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  color: #333;
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0051a2;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.fetchButton,
+.removeButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fetchButton {
+  background-color: #28a745;
+}
+
+.fetchButton:hover {
+  background-color: #218838;
+}
+
+.removeButton {
+  background-color: #dc3545;
+}
+
+.removeButton:hover {
+  background-color: #c82333;
+}
+
+.goalsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.goalItem {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.message {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #495057;
+}

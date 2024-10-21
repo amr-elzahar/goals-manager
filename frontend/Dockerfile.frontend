@@ -1,0 +1,29 @@
+# Use an official Node.js runtime as the base image
+FROM node:20-alpine3.16
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json .
+
+# Install dependencies 
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Declare a build-time variable for the backend URL, which will be passed during the build time.
+ARG NEXT_PUBLIC_BACKEND_URL
+
+# Set the environment variable to ensure the backend URL is available both during the build process and at runtime for the Next.js app.
+ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
+
+# Build the application
+RUN npm run build
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the application in production mode
+CMD ["npm", "run", "start"]
