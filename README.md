@@ -40,7 +40,16 @@ docker push <your-docker-username>/goals-manager-backend
 Apply the Kubernetes manifests:
 
 ```bash
-kubectl apply -f k8s-deployment/
+kubectl apply -f k8s-deployment/mongo-service.yaml
+kubectl apply -f k8s-deployment/mongo-statefullset.yaml
+kubectl apply -f k8s-deployment/mongo-job.yaml
+kubectl apply -f k8s-deployment/backend-configmap.yaml
+kubectl apply -f k8s-deployment/backend-deployment.yaml
+kubectl apply -f k8s-deployment/backend-service.yaml
+kubectl apply -f k8s-deployment/frontend-cofigmap.yaml
+kubectl apply -f k8s-deployment/frontend-deployment.yaml
+kubectl apply -f k8s-deployment/frontend-service.yaml
+kubectl apply -f k8s-deployment/ingress.yaml
 ```
 
 ### Accessing the Application

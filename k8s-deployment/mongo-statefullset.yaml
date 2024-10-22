@@ -7,7 +7,7 @@ spec:
     matchLabels:
       app: mongodb
   serviceName: mongodb
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
@@ -22,6 +22,11 @@ spec:
           volumeMounts:
             - name: mongo-data
               mountPath: /data/db
+          command:
+            - mongod
+            - --replSet
+            - rs0
+            - --bind_ip_all
   volumeClaimTemplates:
     - metadata:
         name: mongo-data
